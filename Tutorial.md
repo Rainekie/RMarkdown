@@ -76,18 +76,18 @@
 1. Open 'Nuendo'.
 2. After launching Nuendo, select 'Dante Virtual Soundcard (x64)' on the Audio Driver Setup Window.
 
-![](screenshot/nuendo1.png)
+![](screenshot/Nuendo1.png)
 
 3. click on the 'Create Empty' button.
 
-![](screenshot/nuendo2.png)
+![](screenshot/Nuendo2.png)
 
 4. Open the 'Audio Connection' window from studio tab > audio connection, then click on the 'Output' tab. 
 
 5. Check all device ports are started from 'Dante tx ~'. (btw, You can create any bus settings you want here.)
 
-![](screenshot/nuendo3.png)
+![](screenshot/Nuendo3.png)
 
 6. drag and drop the sound source, then play the sound. Make sure the output-bus setting in the middle of the Inspector panel is correct. 
 
-![](screenshot/nuendo4.png)
+![](screenshot/Nuendo4.png)
