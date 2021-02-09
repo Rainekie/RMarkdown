@@ -53,12 +53,12 @@
 ## Max 8
 1. Launch 'Max' and open a new window.
 ![](screenshot/max1.png)
-
+      
 2. Open 'Audio Status' window.
    Click Options > Audio Status
 
 ![](screenshot/max2.png)
-
+      
 3. Change Audio Setting as below
     Driver: ad_asio Dante Virtual Soundcard (x64)
 
@@ -67,7 +67,7 @@
     Don't change the sampling rate unless there is some particular reason. 
 
 ![](screenshot/max4.png)
-
+       
 4. play some sounds using 'dac~'
 
 ---
@@ -77,17 +77,17 @@
 2. After launching Nuendo, select 'Dante Virtual Soundcard (x64)' on the Audio Driver Setup Window.
 
 ![](screenshot/Nuendo1.png)
-
+      
 3. click on the 'Create Empty' button.
 
 ![](screenshot/Nuendo2.png)
-
+       
 4. Open the 'Audio Connection' window from studio tab > audio connection, then click on the 'Output' tab. 
-
+      
 5. Check all device ports are started from 'Dante tx ~'. (btw, You can create any bus settings you want here.)
 
 ![](screenshot/Nuendo3.png)
-
+       
 6. drag and drop the sound source, then play the sound. Make sure the output-bus setting in the middle of the Inspector panel is correct. 
 
 ![](screenshot/Nuendo4.png)
