@@ -13,12 +13,12 @@
 1. Open 'Reaper' and wait 5sec until the 'Still Evaluating' button is active.
 
 ![](screenshot/reaper1.png)
-
+     
 2. Open the Audio Device settings window. 
 
     Options > Preferences > Device
 
-
+     
 3. Make sure the audio settings are the same as below.
 
     Audio system: ASIO
@@ -30,22 +30,22 @@
     (if you want to use another sample rate, please contact 3D audio class's TA [Rai SATO (rs1641@rit.edu)])
 
 ![](screenshot/reaper2.png)
-
+      
 4. drag and drop the sound source that you want to listen to onto the main window. or select the sound file from 'Media file' under the 'Insert' tab on the main menu.
 
 ![](screenshot/reaper3.png)
-
+      
 5. Change MASTER track channel setting.
    Click the 'Route' button on the Master track under the Mixer window. Then the 'Outputs for Master Track' window shows up.
 
 ![](screenshot/reaper4.png)
-
+      
 6. click Track channels and change the number with into the number that the sound file's channels are.
-
+      
 7. Change hardware channel number. Click on the area circled in red and change the channel number into the number you set 6.
 
 ![](screenshot/reaper5.png)
-
+      
 8. Then, you can listen to the sound!
 
 ---
