@@ -7,6 +7,7 @@
 
 ![](screenshot/dante.png)
 
+3. If something wrong with the Dante (e.g. can't play any sounds), try reboot the computer first. If that does't work, Download this profile [here](https://drive.google.com/file/d/1G_FojjapXe2JiL98RiOXH33GF4bBjr2q/view?usp=sharing), and load it on the 'Dante Controller'.
 ---
 
 ## Reaper
