@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dev.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E7%99%BA%E6%98%8E%E3%81%AE%E8%A9%B3%E7%B4%B0">発明の詳細</h1>
+<h2 id="%E8%AB%8B%E6%B1%82%E9%A0%851">【請求項1】</h2>
+<pre class="hljs"><code><div>利用者に対して音源に係るコンテンツを提供するための情報処理システムであって、利用者によって保持されて、空間をスキャンして空間に存在する対象物までの距離を取得する取得部と、前記取得部において取得された前記距離に基づき前記対象物の空間における座標情報を算出する座標情報算出部と、前記座標情報算出部において算出された前記座標情報と、予め空間に仮想的に配置されたアンカーの位置情報とに基づき、前記アンカーを検出するアンカー検出部と、前記座標情報算出部において算出された前記座標情報に基づき、空間における残響特性を算出する残響特性算出部と、前記残響特性算出部において算出された残響特性に基づき、音源を調整する音源調整部と、前記アンカー検出部においてアンカーが検出されたときに、前記音源調整部において調 整された音源に係るコンテンツの利用者に対する提供を制御するコンテンツ制御部とを備える、情報処理システム。
+</div></code></pre>
+<p>上記請求項の<strong>前記座標情報算出部において算出された前記座標情報に基づき、空間における残響特性を算出する残響特性算出部</strong>に関して、発明した内容を詳細に記述できる部分があるので、それを紹介する。</p>
+<h2 id="%E5%BA%A7%E6%A8%99%E6%83%85%E5%A0%B1%E3%81%8B%E3%82%89%E6%AE%8B%E9%9F%BF%E7%89%B9%E6%80%A7%E3%82%92%E6%8E%A8%E5%AE%9A%E3%81%99%E3%82%8B%E6%8A%80%E8%A1%93">座標情報から残響特性を推定する技術</h2>
+<p>本発明では、以下の工程によって残響特性を推定する。</p>
+<ol>
+<li>LiDARなどによる取得部を用いて座標情報算出部で得られた点群データから、部屋形状を推定する。</li>
+<li>得られた部屋形状と、ある一点の残響時間、もしくは各平面の反射係数から、Allen and BerkleyによるMirror image methodを用いて、空間内の任意のアンカー位置、利用者位置の残響特性を随時算出する。</li>
+</ol>
+<h2 id="1-%E9%83%A8%E5%B1%8B%E5%BD%A2%E7%8A%B6%E3%81%AE%E6%8E%A8%E5%AE%9A">1. 部屋形状の推定</h2>
+<p>現状の技術では、LiDARによる点群データから、それぞれの座標軸上における密集点を計算し、その点を測定した空間における壁と推定することで、箱型の単純な部屋形状を算出する。</p>
+<h3 id="a-%E7%82%B9%E7%BE%A4%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%B1%95%E9%96%8B">A. 点群データの展開</h3>
+<p><strong>ある空間の点群データ</strong>
+<img src="cproom.png" alt="" title="ある空間の点群データ"></p>
+<h3 id="b-%E5%A3%81%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E6%8E%A8%E5%AE%9A">B. 壁の位置を推定</h3>
+<p>得られた点群データから、それぞれの座標軸における各点のヒストグラムをプロット。</p>
+<p><strong>上記点群データでのx座標におけるヒストグラム</strong>
+<img src="hist.png" alt=""></p>
+<p>そのヒストグラム形状を元に曲線当てはめを行い、その座標軸におけるピーク点(点群データが最も存在する場所)を特定。</p>
+<p><strong>x座標の正の値において、曲線当てはめを行った時のプロット。</strong>
+<img src="curv.png" alt=""></p>
+<p>ここでは、曲線当てはめの方法として、平滑化スプラインを使用した。
+この曲線当てはめの手法は他にもガウス関数を用いた曲線当てはめなど、さまざまな方法を用いることができる。</p>
+<p>そのピーク点を部屋における壁とみなすことで、合計六つの壁の位置が計算できる。</p>
+<h3 id="c-%E7%AE%B1%E5%9E%8B%E3%81%AE%E9%83%A8%E5%B1%8B%E5%BD%A2%E7%8A%B6%E3%81%AE%E6%8E%A8%E5%AE%9A%E3%81%A8%E3%82%A2%E3%83%B3%E3%82%AB%E3%83%BC%E4%BD%8D%E7%BD%AE%E3%83%BB%E5%88%A9%E7%94%A8%E8%80%85%E4%BD%8D%E7%BD%AE%E3%81%AE%E8%A8%AD%E5%AE%9A">C. 箱型の部屋形状の推定と、アンカー位置・利用者位置の設定。</h3>
+<p>得られた6点の壁の位置を合算に、箱型の部屋形状を作成する。この部屋の中に、別のシステムによって計算されたアンカー位置・利用者位置の座標を入れ込む。</p>
+<p><strong>部屋形状の推定結果。青色の箱が推定された部屋形状を表している。</strong>
+<img src="res.png" alt=""></p>
+<h3 id="%E5%88%A9%E7%82%B9%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E5%B1%95%E6%9C%9B">利点と今後の展望</h3>
+<p>本メソッドでは、部屋形状を単純な箱型であると限定し、かつ壁の位置の推定を曲線当てはめを用いた手法を取ることで、高速かつ、モバイル端末でも容易に処理できる程度の計算量で行える点が利点である。
+今回は、LiDARデータから単純な箱型への変換のみであるが、より複雑な部屋形状を推測することにより、より現実に近い残響特性を計算できる可能性がある。</p>
+<h2 id="2-%E6%AE%8B%E9%9F%BF%E7%89%B9%E6%80%A7%E3%81%AE%E7%AE%97%E5%87%BA">2. 残響特性の算出</h2>
+<p>空間内の任意のアンカー位置・利用者位置の残響特性の算出には、Allen and BerkleyによるMirror image methodを用いる。
+これを使用するには、以下のパラメータが必要である。</p>
+<ul>
+<li>音速 [単位:m/s]</li>
+<li>サンプリングレート [単位:ヘルツ]</li>
+<li>アンカー位置の座標(x,y,z) [単位:メートル]</li>
+<li>利用者位置の座標(x,y,z) [単位:メートル]</li>
+<li>部屋の寸法(x,y,z) [単位:メートル]</li>
+<li>部屋の残響時間 [単位:メートル]、もしくは各壁における反射係数</li>
+</ul>
+<p>上記パラメータのうち、音速は計測した部屋の気温の情報があれば、以下の計算式により計算を行うことができる。</p>
+<p>331.5+0.6t m/s (<em>tは摂氏温度、１気圧の場合</em>)</p>
+<p>サンプリングレートは実際のデバイス内で使用されているサンプリングレートを使用する。</p>
+<p>アンカー位置、利用者位置、部屋の寸法は、上記部屋形状の推定において取得できる。</p>
+<p>残りの部屋の残響時間、もしくは各壁における反射係数であるが、以下の２通りの方法で計算することができる。</p>
+<ol>
+<li>ある一点のアンカー位置、利用者位置から算出された残響時間を用いる。</li>
+<li>取得部によって得られるセンサー情報も用いて、各壁の材質をディープラーニングによる画像認識技術を用いて推定し、その材質などの情報を用いて反射係数を計算する。</li>
+</ol>
+<p>ここでは、1.の残響時間を計算する方法を説明する。</p>
+<h3 id="a-%E3%82%A4%E3%83%B3%E3%83%91%E3%83%AB%E3%82%B9%E5%BF%9C%E7%AD%94%E3%81%AE%E8%A8%88%E6%B8%AC">A. インパルス応答の計測</h3>
+<p>初めに、形状の推定した部屋内でインパルス応答を行う。
+インパルス応答の測定はTSP信号を使った測定、ピンクノイズを用いた測定、さらにはバルーンや手拍子を使った測定でも良い。</p>
+<h3 id="b-%E6%AE%8B%E9%9F%BF%E6%99%82%E9%96%93%E3%81%AE%E8%A8%88%E7%AE%97">B. 残響時間の計算</h3>
+<p>得られたインパルス応答から、残響時間を計算する。
+残響時間の計測方法としては、一般的にISO 3382-2:2008という規格が用いられる。</p>
+<h3 id="%E5%88%A9%E7%82%B9%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E5%B1%95%E6%9C%9B">利点と今後の展望</h3>
+<p>本メソッドでは、一点のインパルス応答と、部屋の寸法を設定することで、任意のアンカー位置、利用者位置を容易に推定できる利点がある。
+今後LiDAR情報を詳細に分析することにより、部屋の情報をより多く推定することが可能になれば、Mirror image methodだけでなく、有限要素法 (Finite element method)や、音線法(Sound Ray Tracing method)による、より詳細な室内音響情報の推定を行うことが可能である。</p>
+<h2 id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+<ul>
+<li>
+<p>Mirror image method</p>
+<p>Allen, J. B., &amp; Berkley, D. A. (1979). Image method for efficiently simulating small‐room acoustics. The Journal of the Acoustical Society of America, 65(4), 943-950.</p>
+</li>
+<li>
+<p>インパルス応答の測定方法</p>
+<p>佐藤史明. (2002). 室内音響インパルス応答の測定技術. 日本音響学会誌, 58(10), 669-676.</p>
+</li>
+<li>
+<p>残響時間の計算 ISO 3382-2:2008</p>
+<p>ISO 3382-2:2008 Acoustics — Measurement of room acoustic parameters — Part 2: Reverberation time in ordinary rooms</p>
+</li>
+<li>
+<p>有限要素法</p>
+<p>Petyt, M., Lea, J., &amp; Koopmann, G. H. (1976). A finite element method for determining the acoustic modes of irregular shaped cavities. Journal of Sound and Vibration, 45(4), 495-502.</p>
+</li>
+<li>
+<p>音線法</p>
+<p>Krokstad, A., Strom, S., &amp; Sørsdal, S. (1968). Calculating the acoustical room response by the use of a ray tracing technique. Journal of Sound and Vibration, 8(1), 118-125.</p>
+</li>
+</ul>
+
+</body>
+</html>
