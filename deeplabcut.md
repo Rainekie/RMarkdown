@@ -10,14 +10,14 @@
 
 ## Installation
 
-1. Install pyenv
+### 1. Install pyenv
 
 ```sh
 $ brew update
 $ brew install pyenv
 ```
 
-2. Configure your shell's environment
+### 2. Configure your shell's environment
 
 ```sh
 $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
@@ -32,13 +32,13 @@ $ source ~/.bash_profile
 
 For the detailed information, see [here](https://github.com/pyenv/pyenv#basic-github-checkout)
 
-3. Install xz
+### 3. Install xz
 
 ```sh
 $ brew install xz
 ```
 
-4. Install python in pyenv
+### 4. Install python in pyenv
 
 ```sh
 $ env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.8.5
@@ -53,13 +53,13 @@ $ python --version
 Python 3.8.5
 ```
 
-5. Install pipenv
+### 5. Install pipenv
 
 ```sh
 $ pip install pipenv
 ```
 
-6. Move to (or create) a directry where you want to save deeplabcut
+### 6. Move to (or create) a directry where you want to save deeplabcut
 
 ```sh
 $ cd <dir>
@@ -71,19 +71,19 @@ or
 $ mkdir -p <dir>; cd $_ 
 ```
 
-7. Create a new pipenv project(environment) using python 3.8.5
+### 7. Create a new pipenv project(environment) using python 3.8.5
 
 ```sh
 $ pipenv --python 3.8.5
 ```
 
-8. Install deeplabcut on into the project
+### 8. Install deeplabcut on into the project
 
 ```sh
 $ pipenv install 'deeplabcut[gui]'==2.2.0.3
 ```
 
-9. Launch deeplabcut gui
+### 9. Launch deeplabcut gui
 
 ```sh
 $ pipenv run python -m deeplabcut
