@@ -1,4 +1,4 @@
-# instration manual - deeplabcut
+# Installation manual - deeplabcut
 
 ## Requirement
 
