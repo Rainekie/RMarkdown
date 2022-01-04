@@ -10,14 +10,14 @@
 
 ## Installation
 
-### 1. Install pyenv
+### 1.  Install pyenv
 
 ```sh
 $ brew update
 $ brew install pyenv
 ```
 
-### 2. Configure your shell's environment
+### 2.  Configure your shell's environment
 
 ```sh
 $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
