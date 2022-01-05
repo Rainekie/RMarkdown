@@ -9,7 +9,7 @@
 ## Procedure
 
 ### 1. Install docker
-See https://docs.docker.com/install/ & for Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+See [here](https://docs.docker.com/install/) & for Ubuntu: [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ### 2. Check docker works properly
 
@@ -39,4 +39,4 @@ $ deeplabcut-docker gui
 ```
 
 ## Note
-For the detailed info, see https://github.com/DeepLabCut/DeepLabCut/tree/master/docker
+For the detailed info, see [here](https://github.com/DeepLabCut/DeepLabCut/tree/master/docker)
